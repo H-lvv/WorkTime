@@ -91,7 +91,7 @@ var calender = new function (){
 		var selectMonthDay = new Date(selectYear,selectMonth,1);//选择月份的第一天
 		var firstDayWeek = selectMonthDay.getDay();//获取第一天的星期
 		for(var i=firstDayWeek,j=1;i<=$(".week-day-b li").length&&j<=dayNum;i++,j++){
-			$(".week-day-b li").eq(i).html("<span>"+j  +"</span>");//填写日期
+			$(".week-day-b li").eq(i).html("<span>"+ j + "</span>");//填写日期
 			if(j == selectDay)
 				$(".week-day-b li").eq(i).addClass("duty-cur");
 			if(i==$(".week-day-b li").length-1&&j!=dayNum){//如果日历格子不够再画一行
@@ -221,7 +221,7 @@ var calender = new function (){
 		var fn = parseInt(days%5);
 		var selectVac = getvac(fn);
 		//设置年月日
-		$("#disDate").html(selectYear+"年 "+(selectMonth*1+1)+"月 "+selectDay+"日  星期" +selectWeek +"<br>" + "<font size='10' color='#8a2be2'>"
+		$("#disDate").html(selectYear+"年 "+(selectMonth*1+1)+"月 "+selectDay+"日  星期" +selectWeek +"<br>" + "<font size='8' color='#8a2be2'>"
 			+selectVac + "</font>");
 	}
 	/*
