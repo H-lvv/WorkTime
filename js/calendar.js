@@ -218,7 +218,7 @@ var calender = new function (){
         setDate.setFullYear(selectYear,selectMonth,selectDay);
         var days = parseInt(setDate.getTime()/(1000*86400));
 		selectWeek = getweek(selectWeek);
-		var fn = parseInt(days%5);
+		var fn = parseInt(days%6);
 		var selectVac = getvac(fn);
 		//设置年月日
 		$("#disDate").html(selectYear+"年 "+(selectMonth*1+1)+"月 "+selectDay+"日  星期" +selectWeek +"<br>" + "<font size='8' color='#8a2be2'>"
@@ -241,11 +241,12 @@ var calender = new function (){
     function getvac(day){
         var vac = "";
         switch(day){
-            case 2:vac="白班: 8.00—15.30";break;
-            case 3:vac="大夜: 23.00—8.00";break;
-            case 4:vac="小夜: 17.00—23.00";break;
-            case 0:vac="休息";break;
-            case 1:vac="休息";break;
+            case 0:vac="白班: 8.00—15.30";break;
+            case 1:vac="大夜: 23.00—8.00";break;
+            case 2:vac="小夜(值班): 17.00—21.00";break;
+            case 3:vac="小夜: 17.00—23.00";break;
+            case 4:vac="休息";break;
+            case 5:vac="休息";break;
         }
         return vac;
     }
